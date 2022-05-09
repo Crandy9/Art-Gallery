@@ -1,0 +1,26 @@
+﻿<!--Copy/pasted _ValidationScriptsPartial.cshtml and renamed it to _LoginStatusPartial
+    removed script tags. 
+    This is a partial view that uses razor syntax to 
+    determine if a user is logged in (authenticated) or not (anonymous)
+    this page does nothing unless it is implemented in the _Layout.cshtml page
+-->
+
+<!--Razor syntax-->
+<!--If the user is authenticated (logged in) -->
+@if(User.Identity.IsAuthenticated)
+{
+    // when user clicks on Logout button, it triggers HTTP "post"
+    // which calls the Logout.cshtml.cs model which then redirects
+    // to the index homepage
+    <form method = "post" class="form-inline" asp-page = "/Account/Logout">
+        Welcome @User.Identity.Name    
+        <button type="submit" class = "ml-2 btn btn-link">Logout</button>
+    </form>
+}
+// if the user is anonymous (not logged in)
+else
+{
+    // asp-page links to view, in this case, the Login view
+    // a tag is a hyperlink tag
+    <a class = "btn btn-link" asp-page = "/Account/Login">Login</a>
+}

@@ -1,0 +1,145 @@
+﻿html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background: url(../images/bg2.jpg) center center no-repeat;
+    background-size: cover;
+    /**make bg fixed when sliding*/
+    background-attachment: fixed;
+    height: 100%
+}
+
+/**hovering from default color to blue for LC tech tag in a tag*/
+a.hover_black:hover {
+    color:aquamarine !important;
+}
+
+/*image hover*/
+.imagehover {
+    transition: transform .4s;
+}
+
+.imagehover:hover {
+    transform: scale(1.4);
+}
+
+.footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    line-height: 30px; /* Vertically center the text there */
+}
+
+.navbar {
+    background-color: #FFF4DC;
+}
+
+/** toggle switch for language */
+/**the entire switch component*/
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 180px;
+    height: 34px;
+}
+
+/**Part that doesn't slide*/
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+/*This is the part that slides*/
+.slider:before {
+    position: absolute;
+    /**label of slider if needed*/
+    content: "";
+    height: 26px;
+    /**roughly half the length of the entire bar*/
+    width: 80px;
+    left: 6px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+/**here is how far the slider slides across the bar*/
+input:checked + .slider:before {
+    -webkit-transform: translateX(87px);
+    -ms-transform: translateX(87px);
+    transform: translateX(87px);
+}
+
+/**text for toggle switch*/
+.text {
+    color: black;
+}
+/**fade in/out text*/
+    .text:after {
+        position: absolute;
+        top: 7px;
+        right: 25px;
+        content: "English";
+        font-family: 'Franklin Gothic Medium';
+        -webkit-transition: opacity 0.5s ease-in-out;
+        -moz-transition: opacity 0.5s ease-in-out;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+/**start on Japanese*/
+    .text:before {
+        position: absolute;
+        top: 7px;
+        left: 25px;
+        content: "日本語";
+        font-family: 'Franklin Gothic Medium';
+        -webkit-transition: opacity 0.5s ease-in-out;
+        -moz-transition: opacity 0.5s ease-in-out;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+input + .slider + .text:after {
+    opacity: 1;
+}
+
+input + .slider + .text:before {
+    opacity: 0;
+}
+
+
+input:checked + .slider + .text:after {
+    opacity: 0;
+}
+
+input:checked + .slider + .text:before {
+    opacity: 1;
+}

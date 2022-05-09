@@ -1,0 +1,55 @@
+﻿@page
+@model Kaoru_Art_Gallery.Pages.Account.LoginModel
+@{
+}
+<!--dev-created file Login.cshtml for creating login and authorization manually-->
+<!--To navigate to this page, the razor pages are organized by folder so go to/account/login-->
+<div class="container" style = "padding:20px">
+    <form method = "post">
+        <div class="text-danger" asp-validation-summary= "ModelOnly"></div>
+        <div class = "form-group row">
+            <div class = "col-2">
+                <!--Label name-->
+                <label asp-for = "Credential.UserName"></label>
+            </div>
+            <div class = "col-5">
+                <!--Binding-->
+                <input type="text" asp-for = "Credential.UserName" class = "form-control"/>
+                <!--requires field-->
+                <span class = "text-danger" asp-validation-for="Credential.UserName"></span>
+            </div>
+        </div>
+        <div class = "form-group row">
+            <div class = "col-2">
+                <!--Label name-->
+                <label asp-for = "Credential.Password"></label>
+            </div>
+            <div class = "col-5">
+                <!--Binding to hide password-->
+                <input type="password" asp-for = "Credential.Password" class = "form-control" />
+                <!--requires field-->
+                 <span class = "text-danger" asp-validation-for="Credential.Password"></span>
+            </div>
+        </div>
+        <!--Remember me check box for persistent cookies-->
+        <div class = "row form-check mb-2">
+            <div class = "col-2">
+                <!--check box and data binding-->
+                <input type="checkbox" asp-for= "Credential.RememberMe" class = "form-check-input"/>
+                <label class= "form-check-label" asp-for= "Credential.RememberMe"></label>
+            </div>
+            <div class = "col-5">
+
+            </div>
+        </div>
+        <!--submit button-->
+        <div class = "form-group row">
+            <div class = "col-2">
+                <input type="submit" class = "btn btn-primary" value = "login" />
+            </div>
+            <div class = "col-5">
+
+            </div>
+        </div>
+    </form>
+</div>
