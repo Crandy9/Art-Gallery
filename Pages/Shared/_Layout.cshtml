@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--set browser tab icon-->
     <link rel="shortcut icon" type="image/ico" href="~/images/tab_icon.jpg">
-    <title>@ViewData["Title"] - Kaoru_Art_Gallery</title>
+    <!--title of browser tab
+        @ViewData["Title"] is found in Index.cshtml
+    -->
+    <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Kaoru_Art_Gallery.styles.css" asp-append-version="true" />
@@ -27,40 +30,71 @@
                     </ul>
                     <!--Login/Logout _LoginStatusPartial.cshtml partial view goes here-->
                     <!--align item to the right using margin right mr class-->
-                    <div class="mr-2">
+                    <!--<div class="mr-2">-->
+                    <div class="m-1">
                         <!--render the _LoginStatusPartial.cshtml partial view in 
-                            account/shared/_LoginStatusPartial.cshtml
-                            This is dynamic depending on the login
-                            status of user. Really useful
-                        -->
-                        <partial name = "_LoginStatusPartial" />
-                    </div>
-                    <label class="switch">
-                      <input type="checkbox">
-                      <span class="slider"></span>
-                      <span class="text"></span>
-                    </label>
+                        account/shared/_LoginStatusPartial.cshtml
+                        This is dynamic depending on the login
+                        status of user. Really useful-->
+                        <partial name= "_LoginStatusPartial" /> 
+                     </div>
+                     <div>
+                         <!--slider for Japanese and English-->
+                        <label class="switch" name= "toggle" id ="toggleclick" asp-page-handler= "ChangeLanguage">
+                               <input type="checkbox">
+                               <span class="slider"></span>
+                               <span class="text"></span>
+                        </label>
+                     </div>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="container mb-5">
         <main role="main" class="pb-3">
             <!--renders Index.cshtml-->
             @RenderBody()
         </main>
     </div>
 
-    <footer class=" footer text-muted">
+    @*<footer class=" text-center text-muted">
         <div class="container d-flex justify-content-center">
             <p style= "white-space:pre";>&copy; 2022 - Developed by </p>
             <a class = "text-muted hover_black" target="_blank" rel= "noreferrer"
             style="text-decoration:none;"
             href= "https://lctechnologies.azurewebsites.net/">LC Technologies</a> 
             <p style= "white-space:pre";> - Jesus Christ is King </p>
-            
         </div>
+    </footer>*@
+    <!--footer with transluscent background-->
+    <footer class="footer text-center text-white">
+        <!-- Grid container -->
+          <div class="container d-flex justify-content-center">
+              <!-- Section: Social media -->
+              <section>
+                  <!-- Mercari -->
+                  <a 
+                    title = "Mercari"
+                    target="_blank"
+                    href="https://jp.mercari.com/user/profile/430366596"
+                    role="button"
+                    ><img src="~/images/mercari_icon.png" 
+                    style="width: 11%;"></a>
+              </section>
+          <!-- Section: Social media -->
+          </div>
+          <!-- Grid container -->
+          <!-- Copyright -->
+          <div class="bg-dark text-center p-3 text-muted" style="background-color: rgba(0,0,0,0.1);">
+            © 2022 - 
+            <a class="text-muted hover_black" style="text-decoration:none;" 
+            href="https://lctechnologies.azurewebsites.net/" target="_blank">
+                Developed by LC Technologies</a>
+             - Jesus Christ is King
+          </div>
+           <!-- Copyright -->
     </footer>
+
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

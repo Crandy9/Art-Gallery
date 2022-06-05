@@ -7,8 +7,6 @@ using Microsoft.AspNetCore.Authorization;
 var builder = WebApplication.CreateBuilder(args);
 
 /*** Add services to the container here ***/
-/*LEFT OFF HERE https://www.youtube.com/watch?v=sogS0DtejVA&list=WL&index=1 
- * @ 1:41:50**/
 
 // Inject Authentication handler
 // adding cookie handler, handles enryption/decryption, etc.
@@ -81,6 +79,7 @@ builder.Services.AddAuthorization(options =>
 /*
 builder.Services.AddSingleton<IAuthorizationHandler, HRManagerProbationRequirementHandler>();*/
 
+// add services for Razor Pages to app
 builder.Services.AddRazorPages();
 
 
@@ -114,6 +113,8 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
+// add endpoints for Razor Pages to IEndpointRouteBuilder 
+// read more here: https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.routing.iendpointroutebuilder?view=aspnetcore-6.0
 app.MapRazorPages();
 
 // launches web app

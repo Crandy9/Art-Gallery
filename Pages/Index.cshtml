@@ -1,44 +1,51 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Kaoru Art Gallery - Beta";
 }
 <!--main page to display pictures-->
 <div class="text-center">
-    <!--welcome message-->
-    <h1 class="display-4">私のアトリエにようこそ</h1>
+    <!--welcome message, use English.cshtml for changing to English-->
+
     <!--grids/rows of paintings-->
-    <div class= "container p-5">
+    <div class= "container">
         <!--row 1; try 3 items/cols per row-->
-        <div class = "row p-5">
+        <div class = "row">
             <div class="col">
-              <img src="~/images/drag.jpg" alt="hapa butt" class="img-thumbnail imagehover">
+              <img src="~/images/hapagrass.jpg" alt="hapa butt" class=" imagehover d-none d-sm-block"id="paintings">
+              <img src="~/images/hapagrass.jpg" alt="hapa butt" class=" imagehover d-sm-none"id="paintings">
             </div>
             <div class="col">
-              <img src="~/images/greenpuh.jpg" alt="hapa butt" class="img-thumbnail imagehover">
+              <img src="~/images/greenpuh.jpg" alt="hapa butt" class=" imagehover d-none d-sm-block"id="paintings">
+              <img src="~/images/greenpuh.jpg" alt="hapa butt" class=" imagehover d-sm-none"id="paintings">
             </div>
             <div class="col">
-              <img src="~/images/happybutt.jpg" alt="hapa butt" class="img-thumbnail imagehover">
+              <img src="~/images/happybutt.jpg" alt="hapa butt" class=" imagehover d-none d-sm-block"id="paintings">
+              <img src="~/images/happybutt.jpg" alt="hapa butt" class=" imagehover d-sm-none"id="paintings">
             </div>
         </div>
         <!--row 2; try 3 items/cols per row-->
         <div class = "row p-5">
             <div class="col">
-              <img src="~/images/mountain.jpg" alt="hapa butt" class="img-thumbnail imagehover">
+              <img src="~/images/hapafront.jpg" alt="hapa butt" class=" imagehover d-none d-sm-block" id="paintings">
+              <img src="~/images/hapafront.jpg" alt="hapa butt" class=" imagehover d-sm-none"id="paintings">
             </div>
             <div class="col">
-              <img src="~/images/hapagrass.jpg" alt="hapa butt" class="img-thumbnail imagehover">
+              <img src="~/images/drag.jpg" alt="hapa butt" class=" imagehover d-none d-sm-block"id="paintings">
+              <img src="~/images/drag.jpg" alt="hapa butt" class=" imagehover d-sm-none"id="paintings">
             </div>
             <div class="col">
-              <img src="~/images/happybutt2.jpg" alt="hapa butt" class="img-thumbnail imagehover">
+              <img src="~/images/happybutt2.jpg" alt="hapa butt" class=" imagehover d-none d-sm-block"id="paintings">
+              <img src="~/images/happybutt2.jpg" alt="hapa butt" class=" imagehover d-sm-none"id="paintings">
             </div>
         </div>
         <!--row 3; try 3 items/cols per row-->
         <div class = "row p-5">
             <div class="col">
-              <img src="~/images/hapafront.jpg" alt="hapa butt" class="img-thumbnail imagehover">
             </div>
             <div class="col">
+              <img src="~/images/mountain.jpg" alt="hapa butt" class=" imagehover d-none d-sm-block"id="paintings">
+              <img src="~/images/mountain.jpg" alt="hapa butt" class=" imagehover d-sm-none"id="paintings">
             </div>
             <div class="col">
             </div>

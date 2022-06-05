@@ -12,15 +12,16 @@
     // when user clicks on Logout button, it triggers HTTP "post"
     // which calls the Logout.cshtml.cs model which then redirects
     // to the index homepage
-    <form method = "post" class="form-inline" asp-page = "/Account/Logout">
-        Welcome @User.Identity.Name    
-        <button type="submit" class = "ml-2 btn btn-link">Logout</button>
+    <form method = "post" class="form-inline m-2 justify-content-center" id="welcome" asp-page = "/Account/Logout">
+        Welcome @User.Identity.Name!
+        <button type="submit" class = "ml-3 btn btn-outline-dark" id="logoutbutton">Logout</button>
     </form>
+    
 }
 // if the user is anonymous (not logged in)
 else
 {
     // asp-page links to view, in this case, the Login view
     // a tag is a hyperlink tag
-    <a class = "btn btn-link" asp-page = "/Account/Login">Login</a>
+    <a class = "btn btn-outline-dark" asp-page = "/Account/Login">Login</a>
 }
